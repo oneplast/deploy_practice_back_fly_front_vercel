@@ -1,6 +1,6 @@
 spring:
   datasource:
-#    url: jdbc:postgresql://oneplast-db.internal:5432/fly_deploy_prac
+    #    url: jdbc:postgresql://oneplast-db.internal:5432/fly_deploy_prac
     url: jdbc:postgresql://localhost:5434/surl_prod
     username: postgres
     driver-class-name: org.postgresql.Driver
@@ -19,3 +19,10 @@ logging:
     org.hibernate.orm.jdbc.bind: INFO
     org.hibernate.orm.jdbc.extract: INFO
     org.springframework.transaction.interceptor: INFO
+
+custom:
+  site:
+    cookieDomain: "${custom.prod.cookieDomain}"
+    frontUrl: "${custom.prod.frontUrl}"
+    backUrl: "${custom.prod.backUrl}"
+    name: APP1

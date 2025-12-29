@@ -1,5 +1,6 @@
 package io.river.backend.global.security
 
+import io.river.backend.global.app.AppConfig
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpMethod.GET
@@ -47,7 +48,7 @@ class SecurityConfig {
 
         val configuration = CorsConfiguration()
 
-        configuration.allowedOrigins = listOf("http://localhost:3000")
+        configuration.allowedOrigins = listOf(AppConfig.getSiteFrontUrl())
 
         configuration.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
 
