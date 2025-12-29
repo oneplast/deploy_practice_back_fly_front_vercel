@@ -1,6 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://oneplast-db.internal:5432/oneplast-app-8
+#    url: jdbc:postgresql://oneplast-db.internal:5432/fly_deploy_prac
+    url: jdbc:postgresql://localhost:5434/surl_prod
     username: postgres
     driver-class-name: org.postgresql.Driver
 
