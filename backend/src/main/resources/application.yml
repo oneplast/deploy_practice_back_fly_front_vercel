@@ -64,3 +64,6 @@ custom:
     frontUrl: "${custom.dev.frontUrl}"
     backUrl: "${custom.dev.backUrl}"
     name: APP1
+
+  genFile:
+    dirPath: C:/Users/Min/deploy_practice/backend/temp

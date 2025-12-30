@@ -1,12 +1,15 @@
 package io.river.backend.domain.home.home.controller
 
+import io.river.backend.global.app.AppConfig
 import io.river.backend.global.rq.Rq
 import io.river.backend.standard.extensions.logger
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.ResponseBody
+import java.io.File
 import java.net.InetAddress
+import java.util.UUID.randomUUID
 
 @Controller
 class HomeController(
@@ -42,5 +45,21 @@ class HomeController(
         @PathVariable name: String
     ): String {
         return rq.getCookieValue(name) ?: ""
+    }
+
+    @GetMapping("/newFile")
+    @ResponseBody
+    fun newFile(): String {
+
+        val fileName = "${randomUUID()}.html"
+        val filePath = "${AppConfig.getGenFileDirPath()}/${fileName}"
+
+        if (!File(AppConfig.getGenFileDirPath()).exists()) {
+            File(AppConfig.getGenFileDirPath()).mkdirs()
+        }
+
+        File(filePath).writeText("<h1>${fileName}</h1>")
+
+        return "${AppConfig.getSiteBackUrl()}/gen/${fileName}"
     }
 }
