@@ -8,8 +8,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.web.servlet.MockMvc
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers.print
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
 import org.springframework.transaction.annotation.Transactional
 
@@ -30,9 +30,9 @@ class ApiV1PostControllerTest {
     fun t1() {
         val resultActions = mvc
             .perform(
-                MockMvcRequestBuilders.get("/api/v1/posts")
+                get("/api/v1/posts")
             )
-            .andDo(MockMvcResultHandlers.print())
+            .andDo(print())
 
         val posts = postService.findAll()
 
