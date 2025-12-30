@@ -6,6 +6,10 @@ spring:
   application:
     name: backend
 
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+
   profiles:
     active: dev
     include: secret

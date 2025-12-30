@@ -1,4 +1,7 @@
 spring:
+  autoconfigure:
+    exclude:
+
   datasource:
     url: jdbc:postgresql://oneplast-db-1.internal:5432/fly_deploy_prac
     #    url: jdbc:postgresql://localhost:5434/fly_deploy_prac
