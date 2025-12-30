@@ -21,7 +21,7 @@ jobs:
       - name: application-secret.yml 생성
         env:
           APPLICATION_SECRET: ${{ secrets.APPLICATION_SECRET_YML }}
-        run: echo "$APPLICATION_SECRET" > backend/src/main/resources/application-secret.yml"
+        run: echo "$APPLICATION_SECRET" > backend/src/main/resources/application-secret.yml
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
         working-directory: backend
