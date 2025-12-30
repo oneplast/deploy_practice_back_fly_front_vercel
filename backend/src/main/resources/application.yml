@@ -6,6 +6,10 @@ spring:
   application:
     name: backend
 
+  data:
+    redis:
+      port: 36379
+
   profiles:
     active: dev
     include: secret
