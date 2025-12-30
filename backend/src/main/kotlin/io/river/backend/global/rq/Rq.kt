@@ -55,4 +55,12 @@ class Rq(
     fun getHeader(name: String): String? {
         return req.getHeader(name)
     }
+
+    fun setSession(name: String, value: String) {
+        return req.session.setAttribute(name, value)
+    }
+
+    fun getSessionValueAsStr(name: String): String? {
+        return req.session.getAttribute(name) as? String
+    }
 }
