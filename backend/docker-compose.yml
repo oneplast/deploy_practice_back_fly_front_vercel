@@ -1,0 +1,11 @@
+services:
+  redis:
+    image: redis
+    container_name: fly_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    environment:
+      - TZ=Asia/Seoul
+      - REDIS_PASSWORD=oneplast
+    command: [ "redis-server", "--requirepass", "oneplast" ]
