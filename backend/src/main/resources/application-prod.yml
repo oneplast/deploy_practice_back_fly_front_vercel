@@ -12,10 +12,6 @@ spring:
         highlight_sql: false
         use_sql_comments: false
 
-  data:
-    redis:
-      port: 6379
-
 logging:
   level:
     io.river.backend: INFO
